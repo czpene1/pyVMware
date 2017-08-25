@@ -102,6 +102,8 @@ def main():
     # apply configuration changes
     dev_changes = []
     dev_changes.append(serial_spec)
+
+    # load empty config template applicable to VMs
     spec = vim.vm.ConfigSpec()
     spec.deviceChange = dev_changes
     task = vm.ReconfigVM_Task(spec=spec)
